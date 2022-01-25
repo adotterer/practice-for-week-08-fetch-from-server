@@ -1,4 +1,3 @@
-import { expect } from "@jest/globals";
 import {getAllDogs, postNewDog} from "../assets/js/your-code.js"
 
 const unmockedFetch = global.fetch;
@@ -16,8 +15,16 @@ afterEach(() => {
 describe("fetch call functions", () => {
     describe("getAllDogs", () => {
         test("should redirect the user to /dogs", async => {
-            const res = await getNewDog();
-            expect(res.url).toBe("/dogs")
+            try{
+                if(getAllDogs.constructor.name !== "AsyncFunction") {
+                    throw Error("Your function is not asynchronous.")
+                }
+                // const res = await getNewDog();
+                console.log(getAllDogs.constructor.name, "constructor name")
+                expect(res.url).toBe("/dogs")
+            } catch(e) {
+                console.error(e)
+            }
         })
     })
 })
