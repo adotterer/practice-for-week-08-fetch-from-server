@@ -2,14 +2,6 @@ const http = require('http');
 const fs = require("fs");
 const{ htmlRouter, dogs} = require("./starterRouter")
 
-let nextDogId = 3;
-
-function getNewDogId() {
-  const newDogId = nextDogId;
-  nextDogId++;
-  return newDogId;
-}
-
 function getContentType(fileName) {
   const ext = fileName.split(".")[1];
   switch (ext) {

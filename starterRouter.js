@@ -1,6 +1,12 @@
 const fs = require("fs");
 
+let nextDogId = 3;
 
+function getNewDogId() {
+  const newDogId = nextDogId;
+  nextDogId++;
+  return newDogId;
+}
 let dogs = [
     {
       dogId: 1,
@@ -13,8 +19,8 @@ let dogs = [
       age: 10
     }, {
       dogId: 3,
-      name: 'Rosie',
-      age: 10
+      name: 'Pepper',
+      age: 3
     }
   ];
 function htmlRouter(req, res) {
