@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import {getAllDogs, postNewDog} from "../assets/js/your-code.js"
+import {getAllDogs, getDogNumberTwo, postNewDog} from "../assets/js/your-code.js"
 
 function isPromise(p) {
     if (typeof p === 'object' && typeof p.then === 'function') {
@@ -31,7 +31,7 @@ afterEach(() => {
 });
 
 describe("fetch call functions", () => {
-    describe("getAllDogs", () => {
+    describe("getAllDogs()", () => {
         test("should return a fetch call and be asynchronous",(done) => {
             expect(() => returnsPromise(getAllDogs)).not.toThrowError();
             done()
@@ -46,7 +46,9 @@ describe("fetch call functions", () => {
         });
     });
 
-    describe("postNewDog", () => {
-        
+    describe("getDogNumberTwo()", () => {
+        test("should return a fetch call and be asynchronous", (done) => {
+            expect(() => returnsPromise(getDogNumberTwo)).not.toThrowError()
+        })
     })
 })

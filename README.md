@@ -33,8 +33,13 @@ The body of a request can be formatted correctly by passing in an object to the 
 
 Write your code in `assets/js/your-code.js`. Do not change the code in any other files. 
 
-### getAllDogs()
 
-Return a fetch call to the endpoint for getting all dogs. 
+## Phase 1: getAllDogs()
+
+Return a fetch call to GET /dogs. 
+
+## Phase 2: getDogNumberTwo()
+
+Return a fetch call to the server's endpoint for the dog with an id of 2.
 
 [URLSesarchParams]: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams

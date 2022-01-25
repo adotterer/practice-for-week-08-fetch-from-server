@@ -4,6 +4,10 @@ export function getAllDogs() {
     //!!END
 }
 
+export function getDogNumberTwo() {
+
+}
+
 export function postNewDog() {
     //!!START
     const urlparams = new URLSearchParams({name: "Rosie", age: 5})
