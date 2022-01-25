@@ -8,7 +8,7 @@ Clone the project from the [starter]. Run `npm  install`. Run the tests with `np
 
 ## Background and Context
 
-You will be making fetch requests already integrated with your HTML page. After you start the server with `npm start` begin writing functions. Clicking the labeled buttons on the homepage should redirect to the matching endpoint. Make all changes to `your-code.js`-- No need to restart your server this time!
+You will be making fetch requests already integrated with your HTML page. After you start the server with `npm start` begin writing functions. Clicking the labeled buttons on the homepage should redirect you to the matching endpoint. Make all changes in `your-code.js`. No need to restart the server on this project, however, do you will need to refresh the browser to get the updated copy of your JavaScript file from the server. After you save in VS Code, always refresh the browser to see any changes. 
 
 As review, the two parameters you need to use fetch correctly are outlined below: 
 

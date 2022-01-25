@@ -30,13 +30,13 @@ afterEach(() => {
     global.fetch = unmockedFetch;
 });
 
-describe("fetch call functions", () => {
+describe("fetch call helper functions", () => {
     describe("getAllDogs()", () => {
         test("should return a fetch call and be asynchronous",(done) => {
             expect(() => returnsPromise(getAllDogs)).not.toThrowError();
             done()
         });
-        test("should make a fetch call to the correct endpoint", async () => {
+        test("should make a fetch request to the correct endpoint", async () => {
             const res = await getAllDogs()
             expect(res.url).toBe("/dogs")
         });
@@ -48,7 +48,12 @@ describe("fetch call functions", () => {
 
     describe("getDogNumberTwo()", () => {
         test("should return a fetch call and be asynchronous", (done) => {
-            expect(() => returnsPromise(getDogNumberTwo)).not.toThrowError()
+            expect(() => returnsPromise(getDogNumberTwo)).not.toThrowError();
+            done();
+        });
+        test("should make a fetch request to the correct endpoint", async() => {
+            const res = await getDogNumberTwo();
+            expect(res.url).toBe("/dogs/2");
         })
     })
 })
