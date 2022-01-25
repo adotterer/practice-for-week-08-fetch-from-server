@@ -1,10 +1,28 @@
+import { expect, test } from "@jest/globals";
 import {getAllDogs, postNewDog} from "../assets/js/your-code.js"
+
+function isPromise(p) {
+    if (typeof p === 'object' && typeof p.then === 'function') {
+      return true;
+    }  
+    return false;
+}
+
+function returnsPromise(f) {
+    if (
+        f.constructor.name === 'AsyncFunction' ||
+        (typeof f === 'function' && isPromise(f()))
+    ) {
+        return true;
+    }
+    throw new Error(f.name + " does not return fetch")
+}
 
 const unmockedFetch = global.fetch;
 
 beforeEach(() => {
    global.fetch = (url, options) => {
-       return new Promise.resolve({url, options});
+       return new Promise((resolve) => resolve({url, options}));
    }
 });
 
@@ -14,17 +32,13 @@ afterEach(() => {
 
 describe("fetch call functions", () => {
     describe("getAllDogs", () => {
-        test("should redirect the user to /dogs", async => {
-            try{
-                if(getAllDogs.constructor.name !== "AsyncFunction") {
-                    throw Error("Your function is not asynchronous.")
-                }
-                // const res = await getNewDog();
-                console.log(getAllDogs.constructor.name, "constructor name")
-                expect(res.url).toBe("/dogs")
-            } catch(e) {
-                console.error(e)
-            }
+        test("should return a fetch call and be asynchronous",(done) => {
+            expect(() => returnsPromise(getAllDogs)).not.toThrowError();
+            done()
+        });
+        test("should make a fetch call to the correct end point", (done) => {
+            getAllDogs.then((res) => res).catch(e => console.log(e))
+            done()
         })
     })
 })
