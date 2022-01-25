@@ -44,7 +44,7 @@ Return a fetch call to the server's endpoint for the dog with an id of 2.
 
 ## Phase 3: postNewDog() 
 
-Return a fetch call to post a new dog with a `name` of Rosie and `age` of 1. Since we'll be using the URLSearSet up the body of your request exactly as follows get the test to pass: 
+Return a fetch call to post a new dog with a `name` and `age`. Use the [URLSesarchParams] API to make the body of your request as seen below. What will the `Content-Type` header be?
 
 ```js
 const body = new URLSearchParams({

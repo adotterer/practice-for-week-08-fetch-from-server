@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import {getAllDogs, getDogNumberTwo, postNewDog} from "../assets/js/your-code.js"
+import {getAllDogs, getDogNumberTwo, postNewDog, postNewDogV2} from "../assets/js/your-code.js"
 
 function isPromise(p) {
     if (typeof p === 'object' && typeof p.then === 'function') {
@@ -75,4 +75,11 @@ describe("fetch call helper functions", () => {
             expect(res.options.body.has("age")).toBe(true)
         });
     });
+
+    describe("postNewDogV2(name, age)", () => {
+        test("should return a fetch call", (done) => {
+            expect(() => returnsPromise(postNewDogV2)).not.toThrowError();
+            done();
+        });
+    })
 })
