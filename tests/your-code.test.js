@@ -62,12 +62,17 @@ describe("fetch call helper functions", () => {
             expect(() => returnsPromise(postNewDog)).not.toThrowError();
             done();
         });
-        test("should set the approiate headers", async () => { 
+        test("should set the appropriate headers", async () => { 
             expect.assertions(1);
             const res = await postNewDog();
             expect(res.options.headers).toStrictEqual({"Content-Type": "application/x-www-form-urlencoded"})
-            // expect(() => returnsPromise(postNewDog)).not.toThrowError();
         });
-        
-    })
+        test("should send the appropriate body", async () => {
+            expect.assertions(3);
+            const res = await postNewDog();
+            expect(res.options.body instanceof URLSearchParams).toBe(true);
+            expect(res.options.body.has("name")).toBe(true)
+            expect(res.options.body.has("age")).toBe(true)
+        });
+    });
 })

@@ -1,12 +1,13 @@
 const fs = require("fs");
 
-let nextDogId = 3;
+let nextDogId = 4;
 
 function getNewDogId() {
   const newDogId = nextDogId;
   nextDogId++;
   return newDogId;
-}
+};
+
 let dogs = [
     {
       dogId: 1,
