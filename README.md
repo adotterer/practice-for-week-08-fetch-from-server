@@ -37,4 +37,4 @@ Write your code in `assets/js/your-code.js`. Do not change the code in any other
 
 Return a fetch call to the endpoint for getting all dogs. 
 
-[URLSesarchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams)
+[URLSesarchParams]: (https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams)
