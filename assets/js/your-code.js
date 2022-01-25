@@ -5,7 +5,9 @@ export function getAllDogs() {
 }
 
 export function getDogNumberTwo() {
-
+       //!!START
+       return fetch("/dogs/2")
+       //!!END
 }
 
 export function postNewDog() {
