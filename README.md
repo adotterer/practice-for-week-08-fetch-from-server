@@ -8,16 +8,16 @@ Clone the project from the [starter]. Run `npm  install`. Run the tests with `np
 
 ## Background and Context
 
-You will be making fetch requests already integrated with your HTML page. After you start the server with `npm start` and correctly write the functions, clicking the labelled buttons at `GET /` should redirect to the matching endpoint. 
+You will be making fetch requests already integrated with your HTML page. After you start the server with `npm start` begin writing functions. Clicking the labeled buttons on the homepage should redirect to the matching endpoint. Make all changes to `your-code.js`-- No need to restart your server this time!
 
 As review, the two parameters you need to use fetch correctly are outlined below: 
 
 ```js
-const URL = "/endpoint";
-const headers = {"Content-Type": "your request body's content-type"};
+const URL = "/endpoint"
+const headers = {"Content-Type": "your request body's content-type"}
 // Use the URLSearchParams API to format your body as shown below
 const body = new URLSearchParams({
-    key: "value";
+    key: "value"
 })
 
 const options = {
