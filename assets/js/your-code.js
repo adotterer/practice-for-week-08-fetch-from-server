@@ -1,6 +1,6 @@
 export function getAllDogs() {
     //!!START
-    // return fetch()
+    return fetch("/dogs")
     //!!END
 }
 

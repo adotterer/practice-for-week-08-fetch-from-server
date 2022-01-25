@@ -36,9 +36,13 @@ describe("fetch call functions", () => {
             expect(() => returnsPromise(getAllDogs)).not.toThrowError();
             done()
         });
-        test("should make a fetch call to the correct end point", (done) => {
-            getAllDogs.then((res) => res).catch(e => console.log(e))
-            done()
-        })
-    })
+        test("should make a fetch call to the correct endpoint", async () => {
+            const res = await getAllDogs()
+            expect(res.url).toBe("/dogs")
+        });
+        test("should not have any options passed to fetch", async () => {
+            const res = await getAllDogs()
+            expect(res.options).toBe(undefined)
+        });
+    });
 })
