@@ -9,6 +9,6 @@ postDogsButton.addEventListener("click", () => {
         }
     })
     .catch(e => {
-        console.log(e)
+        console.log("ERROR: ", e)
     })
 })
