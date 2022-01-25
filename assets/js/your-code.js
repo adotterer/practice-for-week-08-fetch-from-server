@@ -1,8 +1,12 @@
-const urlparams = new URLSearchParams({name: "Rosie", age: 5})
+export function getAllDogs() {
+    //!!START
+    
+    //!!END
+}
 
-fetch("/dogs",{method: "POST", redirect: "follow", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: urlparams}).
-    then(res => {
-        if(res.redirected) {
-            window.location.href = res.url
-        }
-    }).catch(e);
+export function postNewDog() {
+    //!!START
+    const urlparams = new URLSearchParams({name: "Rosie", age: 5})
+    return fetch("/dogs",{method: "POST",headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: urlparams})
+    //!!END
+}
