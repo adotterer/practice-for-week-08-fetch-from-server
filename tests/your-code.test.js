@@ -32,7 +32,7 @@ afterEach(() => {
 
 describe("fetch call helper functions", () => {
     describe("getAllDogs()", () => {
-        test("should return a fetch call and be asynchronous",(done) => {
+        test("should return a fetch call",(done) => {
             expect(() => returnsPromise(getAllDogs)).not.toThrowError();
             done()
         });
@@ -47,7 +47,7 @@ describe("fetch call helper functions", () => {
     });
 
     describe("getDogNumberTwo()", () => {
-        test("should return a fetch call and be asynchronous", (done) => {
+        test("should return a fetch call", (done) => {
             expect(() => returnsPromise(getDogNumberTwo)).not.toThrowError();
             done();
         });
@@ -55,5 +55,19 @@ describe("fetch call helper functions", () => {
             const res = await getDogNumberTwo();
             expect(res.url).toBe("/dogs/2");
         })
+    });
+
+    describe("postNewDog()", () => {
+        test("should return a fetch call", (done) => {
+            expect(() => returnsPromise(postNewDog)).not.toThrowError();
+            done();
+        });
+        test("should set the approiate headers", async () => { 
+            expect.assertions(1);
+            const res = await postNewDog();
+            expect(res.options.headers).toStrictEqual({"Content-Type": "application/x-www-form-urlencoded"})
+            // expect(() => returnsPromise(postNewDog)).not.toThrowError();
+        });
+        
     })
 })
