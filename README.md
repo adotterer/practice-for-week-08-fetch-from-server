@@ -13,8 +13,8 @@ You will be making fetch requests already integrated with your HTML page. After 
 As review, the two parameters you need to use fetch correctly are outlined below: 
 
 ```js
-const URL = "/endpoint"
-const headers = {"Content-Type": "your request body's content-type"}
+const url = "/endpoint"
+const headers = {"Content-Type": "Request body's Content-Type"}
 // Use the URLSearchParams API to format your body as shown below
 const body = new URLSearchParams({
     key: "value"
@@ -26,7 +26,7 @@ const options = {
     body: body
 }
 
-fetch(URL, options);
+fetch(url, options);
 ```
 
 The body of a request can be formatted correctly by passing in an object to the [URLSesarchParams] constructor function. 
