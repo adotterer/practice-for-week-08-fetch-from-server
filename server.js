@@ -20,6 +20,8 @@ function getContentType(fileName) {
       return "image/png";
     case "css":
       return "text/css";
+    case "js":
+      return "text/javascript";
     default:
       return "text/plain";
   }
