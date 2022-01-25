@@ -29,7 +29,7 @@ const options = {
 fetch(url, options);
 ```
 
-The body of a request can be formatted correctly by passing in an object to the [URLSesarchParams] constructor function. 
+The body of a request can be formatted correctly by passing in an object to the [URLSesarchParams] API's constructor function. 
 
 Write your code in `assets/js/your-code.js`. Do not change the code in any other files. 
 
@@ -41,5 +41,24 @@ Return a fetch call to GET /dogs.
 ## Phase 2: getDogNumberTwo()
 
 Return a fetch call to the server's endpoint for the dog with an id of 2.
+
+## Phase 3: postNewDog() 
+
+Return a fetch call to post a new dog with a `name` of Rosie and `age` of 1. Since we'll be using the URLSearSet up the body of your request exactly as follows get the test to pass: 
+
+```js
+const body = new URLSearchParams({
+    name: "Rosie"; 
+    age: 1,
+})
+```
+
+You will know you sent the correct fetch request when the browser is redirected to the new dog's page. 
+
+## Phase 4: postNewDogUserInput(name, age) 
+
+This time you'll be posting a dog from the user's input. Don't worry-- the `name` and `age` values come from the `postNewDogUserInput(name, age) ` functions parameters. You should be able to restructure your last request to be more dynamic now. 
+
+Implemented correctly, when you fill out the input boxes, whatever dog name and age you input will be added to the server. 
 
 [URLSesarchParams]: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams
