@@ -8,6 +8,33 @@ Clone the project from the [starter]. Run `npm  install`. Run the tests with `np
 
 ## Background and Context
 
-You will be making fetch requests already integrated with your HTML page. Your job is to make the fetch calls to the correct endpoints and with the correct options. 
+You will be making fetch requests already integrated with your HTML page. After you start the server with `npm start` and correctly write the functions, clicking the labelled buttons at `GET /` should redirect to the matching endpoint. 
 
-Write your code in `assets/js/your-code.js`. Do not change the code in any other files.
+As review, the two parameters you need to use fetch correctly are outlined below: 
+
+```js
+const URL = "/endpoint";
+const headers = {"Content-Type": "your request body's content-type"};
+// Use the URLSearchParams API to format your body as shown below
+const body = new URLSearchParams({
+    key: "value";
+})
+
+const options = {
+    method: "GET|POST|PUT|DELETE", 
+    headers: headers,
+    body: body
+}
+
+fetch(URL, options);
+```
+
+The body of a request can be formatted correctly by passing in an object to the [URLSesarchParams] constructor function. 
+
+Write your code in `assets/js/your-code.js`. Do not change the code in any other files. 
+
+### getAllDogs()
+
+Return a fetch call to the endpoint for getting all dogs. 
+
+[URLSesarchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams)

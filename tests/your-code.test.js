@@ -1,4 +1,4 @@
-import { expect, test } from "@jest/globals";
+import { describe, expect, test } from "@jest/globals";
 import {getAllDogs, postNewDog} from "../assets/js/your-code.js"
 
 function isPromise(p) {
@@ -45,4 +45,8 @@ describe("fetch call functions", () => {
             expect(res.options).toBe(undefined)
         });
     });
+
+    describe("postNewDog", () => {
+        
+    })
 })
