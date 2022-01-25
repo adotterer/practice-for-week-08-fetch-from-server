@@ -1,5 +1,22 @@
 const fs = require("fs");
 
+
+let dogs = [
+    {
+      dogId: 1,
+      name: 'Fido',
+      age: 2
+    },
+    {
+      dogId: 2,
+      name: 'Fluffy',
+      age: 10
+    }, {
+      dogId: 3,
+      name: 'Rosie',
+      age: 10
+    }
+  ];
 function htmlRouter(req, res) {
     let reqBody = "";
     req.on("data", (data) => {
@@ -190,4 +207,4 @@ function htmlRouter(req, res) {
   });
 }
 
-module.exports = htmlRouter;
+module.exports = {htmlRouter, dogs};

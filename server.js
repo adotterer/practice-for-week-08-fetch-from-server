@@ -1,23 +1,6 @@
 const http = require('http');
 const fs = require("fs");
-const htmlRouter = require("./starterRouter")
-
-let dogs = [
-  {
-    dogId: 1,
-    name: 'Fido',
-    age: 2
-  },
-  {
-    dogId: 2,
-    name: 'Fluffy',
-    age: 10
-  }, {
-    dogId: 3,
-    name: 'Rosie',
-    age: 10
-  }
-];
+const{ htmlRouter, dogs} = require("./starterRouter")
 
 let nextDogId = 3;
 
@@ -26,7 +9,6 @@ function getNewDogId() {
   nextDogId++;
   return newDogId;
 }
-
 
 function getContentType(fileName) {
   const ext = fileName.split(".")[1];
