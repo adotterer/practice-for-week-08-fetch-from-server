@@ -55,9 +55,9 @@ const body = new URLSearchParams({
 
 You will know you sent the correct fetch request when the browser is redirected to the new dog's page. 
 
-## Phase 4: postNewDogUserInput(name, age) 
+## Phase 4: postNewDogV2(name, age) 
 
-This time you'll be posting a dog from the user's input. Don't worry-- the `name` and `age` values come from the `postNewDogUserInput(name, age) ` functions parameters. You should be able to restructure your last request to be more dynamic now. 
+You can hard code a new dog now, but you want your code to be more dynamic. This time you'll be posting a dog to the server based on the user's input. Don't worry-- your colleagues wrote the code to get the `name` and `age` from the HTML and pass them in as arguments to this function. You should be able to restructure your last request from Phase 3 to be more dynamic now. 
 
 Implemented correctly, when you fill out the input boxes, whatever dog name and age you input will be added to the server. 
 
