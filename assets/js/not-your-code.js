@@ -3,11 +3,22 @@ import {deleteDog, getAllDogs, getDogNumberTwo, postNewDog,  postNewDogV2} from 
 const cbHandler = async (res) => {
     if(res.redirected) {
        return window.location.href = res.url
-    }
+    } 
+
     const [_, endpoint] = res.url.split("http://localhost:5001/");
-    if(endpoint.startsWith("dogs") && res.status === 200) {
+    console.log(endpoint)
+    if(/dogs\/\d+\/delete/.test(endpoint)) {
+        const html  = await res.text()
+        console.log(html)
+        const startIdx = html.indexOf("<body>");
+        const endIdx = html.indexOf("</body>");
+        console.log(startIdx, endIdx)
+        const body = html.slice(startIdx, endIdx + 7)
+        document.body.innerHTML = body 
+    } else {
         window.location.href = `/${endpoint}`;
     }
+    
     return res
 };
 

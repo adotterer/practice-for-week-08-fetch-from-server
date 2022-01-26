@@ -15,9 +15,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/adotterer/practice-for-week-08-fetch-from-server-/issues"
+    "url": "https://github.com/adotterer/practice-for-week-08-fetch-from-server/issues"
   },
-  "homepage": "https://github.com/adotterer/practice-for-week-08-fetch-from-server-#readme",
+  "homepage": "https://github.com/adotterer/practice-for-week-08-fetch-from-server#readme",
   "devDependencies": {
     "nodemon": "^2.0.15"
   },
