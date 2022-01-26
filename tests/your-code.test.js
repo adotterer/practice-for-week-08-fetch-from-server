@@ -83,15 +83,19 @@ describe("fetch call helper functions", () => {
         });
         test("should set the appropriate headers", async () => { 
             expect.assertions(1);
-            const res = await postNewDog();
+            const res = await postNewDogV2("Rosie",1);
             expect(res.options.headers).toStrictEqual({"Content-Type": "application/x-www-form-urlencoded"})
         });
         test("should send the appropriate body", async () => {
-            expect.assertions(3);
-            const res = await postNewDogV2();
+            expect.assertions(5);
+            const res = await postNewDogV2("ckyussk1q0000oiv5842u3dri",8);
             expect(res.options.body instanceof URLSearchParams).toBe(true);
             expect(res.options.body.has("name")).toBe(true)
-            expect(res.options.body.has("age")).toBe(true)
+            expect(res.options.body.has("age")).toBe(true);
+            const bodyString = res.options.body.toString()
+            expect(bodyString.includes("ckyussk1q0000oiv5842u3dri")).toBe(true)
+            expect(bodyString.includes(8)).toBe(true)
+            
         });
     });
 })

@@ -19,7 +19,7 @@ export function postNewDog() {
 
 export function postNewDogV2(name, age) {
      //!!START
-    const urlparams = new URLSearchParams({name, age})
+    const urlparams = new URLSearchParams({age, name})
     return fetch("/dogs",{method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: urlparams})
      //!!END
 }
