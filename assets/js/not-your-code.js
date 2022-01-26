@@ -6,7 +6,6 @@ const cbHandler = async (res) => {
     } 
 
     const [_, endpoint] = res.url.split("http://localhost:5001/");
-    console.log(endpoint)
     if(/dogs\/\d+\/delete/.test(endpoint)) {
         const html  = await res.text()
         const startIdx = html.indexOf("<body>");
