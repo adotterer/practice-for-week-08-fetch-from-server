@@ -9,10 +9,8 @@ const cbHandler = async (res) => {
     console.log(endpoint)
     if(/dogs\/\d+\/delete/.test(endpoint)) {
         const html  = await res.text()
-        console.log(html)
         const startIdx = html.indexOf("<body>");
         const endIdx = html.indexOf("</body>");
-        console.log(startIdx, endIdx)
         const body = html.slice(startIdx, endIdx + 7)
         document.body.innerHTML = body 
     } else {
