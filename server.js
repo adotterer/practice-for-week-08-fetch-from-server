@@ -38,9 +38,14 @@ const server = http.createServer((req, res) => {
     const [_,urlParts] = req.url.split("/dogs/");
     const [id,__] = urlParts.split("/");
     if(req.headers.auth !== "ckyut5wau0000jyv5bsrud90y") {
-      res.statusCode = 403
-      res.setHeader("Location","/")
-      return res.end()
+      console.log("unauth header")
+      const htmlPage = fs.readFileSync("./views/error.html", 'utf-8');
+      const resBody = htmlPage
+      .replace(/#{message}/g, 'Unauthorized request, check your request headers');
+        res.statusCode = 404;
+        res.setHeader("Content-Type", "text/html");
+        res.write(resBody);
+        return res.end();
     }
     const idxToDelete = dogs.findIndex(dog => dog.dogId == id);
     dogs.splice(idxToDelete, 1)
