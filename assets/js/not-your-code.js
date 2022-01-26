@@ -28,8 +28,7 @@ fetch("/api/dogs").then(res => res.json()).then((dogs)=> {
         option.value = dog.dogId;
         option.innerText = dog.dogId;
         deleteSelect.appendChild(option)
-    })
-    
+    });
 })
 
 const dogName = document.querySelector(".dog_name");
