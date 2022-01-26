@@ -42,7 +42,7 @@ const server = http.createServer((req, res) => {
       const htmlPage = fs.readFileSync("./views/error.html", 'utf-8');
       const resBody = htmlPage
       .replace(/#{message}/g, 'Unauthorized request, check your request headers');
-        res.statusCode = 403;
+        res.statusCode = 401;
         res.setHeader("Content-Type", "text/html");
         res.write(resBody);
         return res.end();
