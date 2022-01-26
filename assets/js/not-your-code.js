@@ -19,6 +19,16 @@ const getAllDogsButton = document.querySelector("#get_dogs")
 const getDogTwoButton = document.querySelector("#get_dogs2");
 const postDogsButton = document.querySelector("#post_dogs");
 const postDogsV2Button = document.querySelector(".userinput_dog_submit");
+const deleteSelect = document.querySelector(".dog_id_delete");
+
+fetch("/api/dogs/count").then(res => res.json()).then(({dogCount})=> {
+    for (let i = 1; i <= dogCount; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.innerText = i;
+        deleteSelect.appendChild(option)
+    }
+})
 
 const dogName = document.querySelector(".dog_name");
 const dogAge = document.querySelector(".dog_age")
