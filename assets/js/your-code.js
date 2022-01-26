@@ -26,6 +26,6 @@ export function postNewDogV2(name, age) {
 
 export function deleteDog(id) {
       //!!START
-    return fetch(`/dogs/${id}/delete`, {method: "DELETE", headers: {"AUTH": "mellons"}})
+    return fetch(`/dogs/${id}/delete`, {method: "DELETE", headers: {"AUTH": "ckyut5wau0000jyv5bsrud90y"}})
        //!!END
 }
