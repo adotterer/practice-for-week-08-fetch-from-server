@@ -38,6 +38,8 @@ Write your code in `assets/js/your-code.js`. Do not change the code in any other
 
 Return a fetch call to `GET /dogs`. 
 
+Run the test specs with `npm test`.
+
 ## Phase 2: getDogNumberTwo()
 
 Return a fetch call to the server's endpoint for the dog with an id of 2.
