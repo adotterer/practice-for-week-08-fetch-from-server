@@ -13,12 +13,13 @@ export function getDogNumberTwo() {
 export function postNewDog() {
     //!!START
     const urlparams = new URLSearchParams({name: "Rosie", age: 1})
-    return fetch("/dogs",{method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: urlparams})
+    return fetch("/dogs",{method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: urlparams});
     //!!END
 }
 
 export function postNewDogV2(name, age) {
      //!!START
-    return fetch("")
+    const urlparams = new URLSearchParams({name, age})
+    return fetch("/dogs",{method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: urlparams})
      //!!END
 }

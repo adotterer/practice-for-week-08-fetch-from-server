@@ -1,4 +1,4 @@
-import {getAllDogs, getDogNumberTwo, postNewDog} from "./your-code.js";
+import {getAllDogs, getDogNumberTwo, postNewDog,  postNewDogV2} from "./your-code.js";
 
 const cbHandler = async (res) => {
     if(res.redirected) {
@@ -18,6 +18,12 @@ const errorHandler = (e) => {
 const getAllDogsButton = document.querySelector("#get_dogs")
 const getDogTwoButton = document.querySelector("#get_dogs2");
 const postDogsButton = document.querySelector("#post_dogs");
+const postDogsV2Button = document.querySelector(".userinput_dog_submit");
+
+const dogName = document.querySelector(".dog_name");
+const dogAge = document.querySelector(".dog_age")
+
+
 
 getAllDogsButton.addEventListener("click", (e) => {
     getAllDogs()
@@ -35,4 +41,10 @@ postDogsButton.addEventListener("click", () => {
     postNewDog()
         .then(cbHandler)
         .catch(errorHandler);
+})
+
+postDogsV2Button.addEventListener("click", () => {
+    postNewDogV2(dogName.value, dogAge.value)
+        .then(cbHandler)
+        .catch(errorHandler)
 })
