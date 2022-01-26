@@ -36,7 +36,7 @@ Write your code in `assets/js/your-code.js`. Do not change the code in any other
 
 ## Phase 1: getAllDogs()
 
-Return a fetch call to GET /dogs. 
+Return a fetch call to `GET /dogs`. 
 
 ## Phase 2: getDogNumberTwo()
 
@@ -66,6 +66,8 @@ Implemented correctly, when you fill out the input boxes, whatever dog name and 
 Implement a fetch request to delete a dog on the server based on an id. Think-- what RESTful route will you make a request to based on a dog's id?
 
 To ensure that not just anyone can delete a dog, the backend engineers have already implemented a `AUTH` header on the backend route. Set the request header for `AUTH` to have the value `ckyut5wau0000jyv5bsrud90y`. This long string is a token used to valdiate any requests with a method of `DELETE`. 
+
+With the correct fetch request, you should be redirected to `GET /dogs`
 
 
 [URLSesarchParams]: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams
