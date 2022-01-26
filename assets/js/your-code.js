@@ -23,3 +23,9 @@ export function postNewDogV2(name, age) {
     return fetch("/dogs",{method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: urlparams})
      //!!END
 }
+
+export function deleteDog(id) {
+      //!!START
+    return fetch(`/dogs/${id}/delete`, {method: "DELETE", headers: {"AUTH": "mellons"}})
+       //!!END
+}

@@ -34,6 +34,12 @@ const server = http.createServer((req, res) => {
     }
   }
 
+  if (req.method=== "DELETE" && req.url.startsWith("/dogs/")) {
+    const urlParts = req.url.split("/dogs/");
+    console.log(req.headers, "headers")
+    console.log(urlParts);
+    return res.end();
+  }
 
   return htmlRouter(req, res)
 });

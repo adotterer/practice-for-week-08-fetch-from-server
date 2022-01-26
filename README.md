@@ -61,4 +61,9 @@ You can hard code a new dog now, but you want your code to be more dynamic. This
 
 Implemented correctly, when you fill out the input boxes, whatever dog name and age you input will be added to the server. 
 
+## Phase 5: deleteDog(id)
+
+Implement a fetch request to delete a dog based on an id. To ensure that not just anyone can delete a dog, the backend engineers have already implemented a `AUTH` header on the backend route. Set the header for `AUTH` to have the value `ckyut5wau0000jyv5bsrud90y`. This long string is a token used to valdiate any requests with a method of `DELETE`. Think-- what RESTful route will you make a request to based on a dog's id?
+
+
 [URLSesarchParams]: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams
