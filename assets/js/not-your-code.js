@@ -22,13 +22,14 @@ const postDogsV2Button = document.querySelector(".userinput_dog_submit");
 const deleteSelect = document.querySelector(".dog_id_delete");
 const deleteButton = document.querySelector("#delete_dog");
 
-fetch("/api/dogs/count").then(res => res.json()).then(({dogCount})=> {
-    for (let i = 1; i <= dogCount; i++) {
+fetch("/api/dogs").then(res => res.json()).then((dogs)=> {
+    dogs.forEach(dog => {
         const option = document.createElement("option");
-        option.value = i;
-        option.innerText = i;
+        option.value = dog.dogId;
+        option.innerText = dog.dogId;
         deleteSelect.appendChild(option)
-    }
+    })
+    
 })
 
 const dogName = document.querySelector(".dog_name");

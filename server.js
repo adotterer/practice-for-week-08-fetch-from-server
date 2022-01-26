@@ -49,9 +49,9 @@ const server = http.createServer((req, res) => {
     return res.end();
   }
 
-  if (req.method === "GET" && req.url === "/api/dogs/count") {
+  if (req.method === "GET" && req.url === "/api/dogs") {
     res.setHeader("Content-Type","application/json")
-    res.write(JSON.stringify({dogCount: dogs.length}))
+    res.write(JSON.stringify(dogs))
     return res.end()
   }
   return htmlRouter(req, res)
