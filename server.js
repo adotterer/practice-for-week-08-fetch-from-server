@@ -35,9 +35,17 @@ const server = http.createServer((req, res) => {
   }
 
   if (req.method=== "DELETE" && req.url.startsWith("/dogs/")) {
-    const urlParts = req.url.split("/dogs/");
-    console.log(req.headers, "headers")
-    console.log(urlParts);
+    const [_,urlParts] = req.url.split("/dogs/");
+    const [id,__] = urlParts.split("/");
+    if(req.headers.auth !== "ckyut5wau0000jyv5bsrud90y") {
+      res.statusCode = 403
+      res.setHeader("Location","/")
+      return res.end()
+    }
+    const idxToDelete = dogs.findIndex(dog => dog.dogId == id);
+    dogs.splice(idxToDelete, 1)
+    res.statusCode = 302;
+    res.setHeader('Location', '/dogs');
     return res.end();
   }
 

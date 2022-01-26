@@ -1,4 +1,4 @@
-import {getAllDogs, getDogNumberTwo, postNewDog,  postNewDogV2} from "./your-code.js";
+import {deleteDog, getAllDogs, getDogNumberTwo, postNewDog,  postNewDogV2} from "./your-code.js";
 
 const cbHandler = async (res) => {
     if(res.redirected) {
@@ -20,6 +20,7 @@ const getDogTwoButton = document.querySelector("#get_dogs2");
 const postDogsButton = document.querySelector("#post_dogs");
 const postDogsV2Button = document.querySelector(".userinput_dog_submit");
 const deleteSelect = document.querySelector(".dog_id_delete");
+const deleteButton = document.querySelector("#delete_dog");
 
 fetch("/api/dogs/count").then(res => res.json()).then(({dogCount})=> {
     for (let i = 1; i <= dogCount; i++) {
@@ -55,6 +56,12 @@ postDogsButton.addEventListener("click", () => {
 
 postDogsV2Button.addEventListener("click", () => {
     postNewDogV2(dogName.value, dogAge.value)
+        .then(cbHandler)
+        .catch(errorHandler)
+})
+
+deleteButton.addEventListener("click", () => {
+    deleteDog(deleteSelect.value)
         .then(cbHandler)
         .catch(errorHandler)
 })
