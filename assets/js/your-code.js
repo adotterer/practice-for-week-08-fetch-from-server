@@ -1,31 +1,19 @@
 export function getAllDogs() {
-    //!!START
-    return fetch("/dogs")
-    //!!END
+   // Your code here
 }
 
 export function getDogNumberTwo() {
-    //!!START
-    return fetch("/dogs/2")
-    //!!END
+    // Your code here
 }
 
 export function postNewDog() {
-    //!!START
-    const urlparams = new URLSearchParams({name: "Rosie", age: 1})
-    return fetch("/dogs",{method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: urlparams});
-    //!!END
+   // Your code here
 }
 
 export function postNewDogV2(name, age) {
-     //!!START
-    const urlparams = new URLSearchParams({age, name})
-    return fetch("/dogs",{method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: urlparams})
-     //!!END
+     // Your code here
 }
 
 export function deleteDog(id) {
-      //!!START
-    return fetch(`/dogs/${id}/delete`, {method: "DELETE", headers: {"AUTH": "ckyut5wau0000jyv5bsrud90y"}})
-       //!!END
+    // Your code here
 }
