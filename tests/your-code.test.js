@@ -108,5 +108,20 @@ describe("fetch call helper functions", () => {
             expect(() => returnsPromise(deleteDog)).not.toThrowError();
             done();
         });
+        test("should set the appropriate method", async () => {
+            expect.assertions(1);
+            const res = await deleteDog(1)
+            expect(res.options.method).toBe("DELETE");
+        })
+        test("should set the appropriate headers", async () => { 
+            expect.assertions(1);
+            const res = await deleteDog(1)
+            expect(res.options.headers).toStrictEqual({"AUTH": "ckyut5wau0000jyv5bsrud90y"})
+        });
+        test("should be sent to the correct endpoint", async () => {
+            expect.assertions(1);
+            const res = await deleteDog(90)
+            expect(res.url).toBe("/dogs/90/delete");
+        })
     })
 })
