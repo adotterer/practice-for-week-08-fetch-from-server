@@ -63,7 +63,9 @@ Implemented correctly, when you fill out the input boxes, whatever dog name and 
 
 ## Phase 5: deleteDog(id)
 
-Implement a fetch request to delete a dog based on an id. To ensure that not just anyone can delete a dog, the backend engineers have already implemented a `AUTH` header on the backend route. Set the header for `AUTH` to have the value `ckyut5wau0000jyv5bsrud90y`. This long string is a token used to valdiate any requests with a method of `DELETE`. Think-- what RESTful route will you make a request to based on a dog's id?
+Implement a fetch request to delete a dog on the server based on an id. Think-- what RESTful route will you make a request to based on a dog's id?
+
+To ensure that not just anyone can delete a dog, the backend engineers have already implemented a `AUTH` header on the backend route. Set the request header for `AUTH` to have the value `ckyut5wau0000jyv5bsrud90y`. This long string is a token used to valdiate any requests with a method of `DELETE`. 
 
 
 [URLSesarchParams]: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams
