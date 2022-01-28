@@ -34,7 +34,7 @@ const server = http.createServer((req, res) => {
     }
   }
 
-  if (req.method=== "DELETE" && req.url.startsWith("/dogs/")) {
+  if (req.method === "POST" && /dogs\/\d+\/delete/.test(req.url)) {
     const [_,urlParts] = req.url.split("/dogs/");
     const [id,__] = urlParts.split("/");
     if(req.headers.auth !== "ckyut5wau0000jyv5bsrud90y") {

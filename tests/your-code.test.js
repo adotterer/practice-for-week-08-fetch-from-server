@@ -111,7 +111,7 @@ describe("fetch call helper functions", () => {
         test("should set the appropriate method", async () => {
             expect.assertions(1);
             const res = await deleteDog(1)
-            expect(res.options.method).toBe("DELETE");
+            expect(res.options.method).toBe("POST");
         })
         test("should set the appropriate headers", async () => { 
             expect.assertions(1);
