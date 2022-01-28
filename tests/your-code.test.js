@@ -66,10 +66,18 @@ describe("fetch call helper functions", () => {
             expect(() => returnsPromise(postNewDog)).not.toThrowError();
             done();
         });
-        test("should set the appropriate headers", async () => { 
+        test("should set the correct method", async() => {
             expect.assertions(1);
             const res = await postNewDog();
-            expect(res.options.headers).toStrictEqual({"Content-Type": "application/x-www-form-urlencoded"})
+            expect(/POST/i.test(res.options.method)).toBe(true);
+        })
+        test("should set the appropriate headers", async () => { 
+            expect.assertions(2);
+            const res = await postNewDog();
+            const [[key, value]] = Object.entries(res.options.headers);
+            console.log(key, value)
+            expect(/Content-Type/i.test(key)).toBe(true);
+            expect(/application\/x-www-form-urlencoded/i.test(value)).toBe(true);
         });
         test("should send the appropriate body", async () => {
             expect.assertions(3);
@@ -86,9 +94,11 @@ describe("fetch call helper functions", () => {
             done();
         });
         test("should set the appropriate headers", async () => { 
-            expect.assertions(1);
+            expect.assertions(2);
             const res = await postNewDogV2("Rosie",1);
-            expect(res.options.headers).toStrictEqual({"Content-Type": "application/x-www-form-urlencoded"})
+            const [[key, value]] = Object.entries(res.options.headers);
+            expect(/Content-Type/i.test(key)).toBe(true);
+            expect(/application\/x-www-form-urlencoded/i.test(value)).toBe(true);
         });
         test("should send the appropriate body", async () => {
             expect.assertions(5);
@@ -111,12 +121,14 @@ describe("fetch call helper functions", () => {
         test("should set the appropriate method", async () => {
             expect.assertions(1);
             const res = await deleteDog(1)
-            expect(res.options.method).toBe("POST");
+            expect(/POST/i.test(res.options.method)).toBe(true);
         })
         test("should set the appropriate headers", async () => { 
-            expect.assertions(1);
-            const res = await deleteDog(1)
-            expect(res.options.headers).toStrictEqual({"AUTH": "ckyut5wau0000jyv5bsrud90y"})
+            expect.assertions(2);
+            const res = await deleteDog(1);
+            const [[key, value]] = Object.entries(res.options.headers);
+            expect(/AUTH/i.test(key)).toBe(true);
+            expect(value).toBe("ckyut5wau0000jyv5bsrud90y");
         });
         test("should be sent to the correct endpoint", async () => {
             expect.assertions(1);
