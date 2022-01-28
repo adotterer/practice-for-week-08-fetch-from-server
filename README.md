@@ -46,7 +46,7 @@ Return a fetch call to the server's endpoint for the dog with an id of 2.
 
 ## Phase 3: postNewDog() 
 
-Return a fetch call to post a new dog with a `name` and `age`. Use the [URLSesarchParams] API to make the body of your request as seen below. What will the `Content-Type` header be?
+Return a fetch call to post a new dog with a `name` and `age`. Use the [URLSearchParams] API to make the body of your request as seen below. What will the `Content-Type` header be?
 
 ```js
 const body = new URLSearchParams({
@@ -71,4 +71,4 @@ To ensure that only you can delete dogs, the backend engineers have already impl
 
 With the correct fetch request, you should be redirected to `GET /dogs` without the deleted dog.
 
-[URLSesarchParams]: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams
+[URLSearchParams]: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams
