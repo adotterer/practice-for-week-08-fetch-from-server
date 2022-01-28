@@ -8,7 +8,7 @@ Clone the project from the [starter]. Run `npm  install`. Run the tests with `np
 
 ## Background and Context
 
-You will be making fetch requests already integrated with your HTML page. After you start the server with `npm start` begin writing functions. Clicking the labeled buttons on the homepage should redirect you to the matching endpoint. Make all changes in `your-code.js`. No need to restart the server on this project, however, do you will need to refresh the browser to get the updated copy of your JavaScript file from the server. After you save in VS Code, always refresh the browser to see any changes. 
+You will be making fetch requests already integrated with your HTML page. After you start the server with `npm start` begin writing functions. Clicking the labeled buttons on the homepage should redirect you to the matching endpoint. Make all changes in `your-code.js`. No need to restart the server on this project, however, you will need to refresh the browser to get the updated copy of your JavaScript file from the server. After you save in VS Code, always refresh the browser to see any changes. 
 
 As review, the two parameters you need to use fetch correctly are outlined below: 
 
@@ -46,7 +46,7 @@ Return a fetch call to the server's endpoint for the dog with an id of 2.
 
 ## Phase 3: postNewDog() 
 
-Return a fetch call to post a new dog with a `name` and `age`. Use the [URLSesarchParams] API to make the body of your request as seen below. What will the `Content-Type` header be?
+Return a fetch call to post a new dog with a `name` and `age`. Use the [URLSearchParams] API to make the body of your request as seen below. What will the `Content-Type` header be?
 
 ```js
 const body = new URLSearchParams({
@@ -65,10 +65,10 @@ Implemented correctly, when you fill out the input boxes, whatever dog name and 
 
 ## Phase 5: deleteDog(id)
 
-Implement a fetch request to delete a dog on the server based on an id. Think-- what RESTful route will you make a request to based on a dog's id?
+Implement a fetch request to delete a dog on the server based on an id. For this *traditional* server, what will the RESTful endpoint be for deleting a dog?
 
-To ensure that only you can delete dogs, the backend engineers have already implemented an `AUTH` header on the backend route. Set the request header for `AUTH` to have the value `ckyut5wau0000jyv5bsrud90y`. This long string is a token used to valdiate any requests with a method of `DELETE`. 
+To ensure that only you can delete dogs, the backend engineers have already implemented an `AUTH` header on the backend route. Set the request header for `AUTH` to have the value `ckyut5wau0000jyv5bsrud90y`. This long string is a token used to valdiate any requests made to this endpoint.
 
 With the correct fetch request, you should be redirected to `GET /dogs` without the deleted dog.
 
-[URLSesarchParams]: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams
+[URLSearchParams]: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams

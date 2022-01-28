@@ -42,8 +42,6 @@ fetch("/api/dogs").then(res => res.json()).then((dogs)=> {
 const dogName = document.querySelector(".dog_name");
 const dogAge = document.querySelector(".dog_age")
 
-
-
 getAllDogsButton.addEventListener("click", (e) => {
     getAllDogs()
         .then(cbHandler)
